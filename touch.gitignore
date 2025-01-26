@@ -1,1 +1,12 @@
 .venv/
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore instance directory (database and other local files)
+instance/project.db
+
+
+
+
+
