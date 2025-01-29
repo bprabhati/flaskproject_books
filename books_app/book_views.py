@@ -50,9 +50,11 @@ def update_record_view(record_id):
     if not update_data:
         return jsonify({"status": "failure", "message": "No update data provided."}), 400
     result = book_controller.update_all_columns_controller(update_data, record_id)
+    print(f"{result}")
     if result["status"] == "success":
         return jsonify(result), 200  
     else:
-        return jsonify(result), 400  
+        return jsonify(result), 400
+
 
     
