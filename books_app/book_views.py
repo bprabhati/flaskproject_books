@@ -42,6 +42,7 @@ def update_one_view():
 @app.route('/update_all',methods=['PATCH'])
 def update_all_view():
     res=book_controller.update_all_controller()
+    print(f"{res}")
     return jsonify(msg=res),200
 
 @app.route('/update_record/<int:record_id>', methods=['PATCH'])
