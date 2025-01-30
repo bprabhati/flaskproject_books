@@ -8,6 +8,14 @@ def create_table():
     db.session.commit()
     return " Table Created Successfully"
 
+def create_table():
+     query=text(""" CREATE TABLE IF NOT EXISTS book_price(book_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id INTEGER NOT NULL,price DECIMAL NOT NULL,FOREIGN KEY (id) REFERENCES books (book_id))
+""")
+     db.session.execute(query)
+     db.session.commit()
+     return " book_price Created Successfully"
+
 def insert_data_model(data):
     query=text(""" INSERT INTO books(name,description,author) VALUES
                (:name, :description, :author)
